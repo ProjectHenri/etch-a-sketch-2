@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/script.js" defer></script>
+    <title>WebSketch</title>
+</head>
+<body>
+    <nav>
+        <h1 class="logo">WebSketch</h1>
+        <a href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch">
+            Odin Project
+            <span class="material-icons nav">arrow_forward</span>
+        </a>
+    </nav>
+    <section id="content">
+        <div class="userInterface">
+            <button class="btn" id="eraser">
+                <span class="material-icons eraseIcon">format_paint</span> 
+                Eraser
+            </button>
+            <button class="btn" id="rainbow">
+                <span class="material-icons looksIcon">looks</span>
+                Rainbow
+            </button>
+            <button class="btn" id="shading"><span class="material-icons contrastIcon">contrast</span> 
+                Shading
+            </button>
+            <button class="btn" id="eraser">
+                <span class="material-icons clearIcon">clear</span> 
+                Clear
+            </button>
+            <button class="btn" id="gridSize">
+                <span class="material-icons gridIcon">view_module</span> 
+                Grid size
+            </button>
+        </div>
+        <div class="sketchArea">
+            <div class="gridContainer">
+                <div id="grid"></div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>Ⓒ ProjectHenri 2022</p>
+        <a href="https://github.com/projecthenri">
+            <img src="./img/github.png" alt="GitHub logo">
+        </a>
+    </footer>
+</body>
+</html>
