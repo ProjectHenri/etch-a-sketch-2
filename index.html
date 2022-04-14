@@ -16,12 +16,16 @@
     <nav>
         <h1 class="logo">WebSketch</h1>
         <a href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch">
-            Odin Project
+            Project
             <span class="material-icons nav">arrow_forward</span>
         </a>
     </nav>
     <section id="content">
         <div class="userInterface">
+            <button class="btn" id="pencil">
+                <span class="material-icons pencilIcon">edit</span>
+                Pencil
+            </button>
             <button class="btn" id="eraser">
                 <span class="material-icons eraseIcon">format_paint</span> 
                 Eraser
@@ -33,16 +37,21 @@
             <button class="btn" id="shading"><span class="material-icons contrastIcon">contrast</span> 
                 Shading
             </button>
-            <button class="btn" id="eraser">
-                <span class="material-icons clearIcon">clear</span> 
+            <button class="btn" id="clear">
+                <span class="material-icons clearIcon">content_cut</span> 
                 Clear
             </button>
             <button class="btn" id="gridSize">
-                <span class="material-icons gridIcon">view_module</span> 
+                <span class="material-icons gridIcon">window</span> 
                 Grid size
+            </button>
+            <button class="btn" id="toggleBorder">
+                <span class="material-icons toggleIcon">star_outline</span> 
+                Toggle border
             </button>
         </div>
         <div class="sketchArea">
+            <h2>Click and drag the mouse on the canvas to draw</h2>
             <div class="gridContainer">
                 <div id="grid"></div>
             </div>
