@@ -68,9 +68,9 @@ nav a:hover{
     cursor: pointer;
     padding:10px 8px;
     border-radius: 6px;
-    transition: all 0.25s;
+    transition: all 0.0s;
 }
-.btn:hover{
+.btn:hover, .selected{
     background:rgb(17, 26, 151);
 }
 .btn:active{
@@ -91,6 +91,7 @@ nav a:hover{
     color: rgb(8, 9, 16);
     font-family: 'Work Sans';
     font-weight:500;
+    user-select: none;
     
 }
 #grid{
@@ -124,6 +125,7 @@ footer a:hover{
 }
 .divBg{
     background:rgb(255,255,255);
+    user-select: none;
 }
 .divBorder{
     border:1px solid rgba(112, 112, 112, 0.15);
