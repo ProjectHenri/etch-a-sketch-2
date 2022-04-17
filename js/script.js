@@ -2,8 +2,7 @@ const GRID = document.querySelector('#grid');
 const BUTTONS = document.querySelectorAll('button');
 const DEFAULT_GRID = 24;
 let divColor = 'rgb(255,255,255)'; // Default grid color
-let isDrawing = true;
-let colorChoice = ''; // User needs to pick an option from the menu to start drawing
+let colorChoice;
 
 window.onload = createGrid(DEFAULT_GRID); // Create initial grid when user loads the page
 
@@ -30,29 +29,34 @@ function populateGrid(squares){
 }
 
 function colorSquares(e){
-    if(isDrawing){
-        switch(colorChoice){
-            case 'pencil':
-                divColor = 'rgb(60,60,60)';
-                e.target.style.backgroundColor = divColor;
-            break;
-            case 'eraser':
-                divColor = 'rgb(255,255,255)';
-                e.target.style.backgroundColor = divColor;
-            break;
-            case 'rainbow':
-                divColor = `rgb(
-                                ${Math.floor(Math.random()*256)},
-                                ${Math.floor(Math.random()*256)},
-                                ${Math.floor(Math.random()*256)}
-                            )`;
-                e.target.style.backgroundColor = divColor;
-            break;
-            case 'shading':
-                divColor = 'rgb(60,60,60)';
-                e.target.style.backgroundColor = divColor;
-            break;
-        }
+    switch(colorChoice){
+        case 'pencil':
+            divColor = 'rgb(60,60,60)';
+            e.target.style.backgroundColor = divColor;
+        break;
+        case 'eraser':
+            divColor = 'rgb(255,255,255)';
+            e.target.style.backgroundColor = divColor;
+        break;
+        case 'rainbow':
+            divColor = `rgb(
+                            ${Math.floor(Math.random()*256)},
+                            ${Math.floor(Math.random()*256)},
+                            ${Math.floor(Math.random()*256)}
+                        )`;
+            e.target.style.backgroundColor = divColor;
+        break;
+        case 'shading':
+            let currentColor = e.target.style.backgroundColor;
+            let opacity = 0;
+            if (currentColor.includes('rgb(60, 60, 60)')){
+                return; // Maximum opacity has been reached
+            }else if(!currentColor.includes('rgba') || currentColor === 'transparent'){
+                currentColor = 'rgba(60, 60, 60, 0.0)'; // Reset the color and alpha value for non-black squares
+            }
+            opacity = Number(currentColor.substring(17,20)); // Get the alpha value for the current square
+            e.target.style.backgroundColor = `rgba(60, 60, 60, ${opacity+0.1})`;
+        break;
     }
 }
 
